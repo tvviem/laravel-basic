@@ -1,4 +1,4 @@
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+/* import ClassicEditor from '@ckeditor/ckeditor5-build-classic'; */
 ClassicEditor
     .create( document.querySelector( '#editor' ) )
     .then( editor => {

@@ -15,9 +15,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        // $posts = Post::orderBy('title', 'desc')->get();
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
-        // $posts = DB::select('SELECT * FROM posts');
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -43,10 +41,10 @@ class PostsController extends Controller
             'title' => 'required',
             'body' => 'required'
         ]);
-        echo $request->input('body');
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->user_id = auth()->user()->id;
         $post->save();
         return redirect('/posts')->with('success', 'Post Created');
     }
