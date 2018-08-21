@@ -6,8 +6,6 @@
  */
 
 require('./bootstrap');
-/* require('./ckeditormore'); */
-
 window.Vue = require('vue');
 
 /**

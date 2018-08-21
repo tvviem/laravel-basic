@@ -11,9 +11,9 @@
     <title>{{ config('app.name', 'LSAPP') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    {{-- <script src="{{ mix('js/app.js') }}" ></script> --}}
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -28,18 +28,11 @@
             @include('include.messages')
             @yield('content')
         </main>
-        <textarea name="content" id="editor">This is some sample content.</textarea>
     </div>
-    
+    <script src="{!! mix('js/app.js') !!}"> </script>
+    <script src="/js/ckeditor/ckeditor.js"></script>
     <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .then( editor => {
-                console.log( editor );
-            } )
-            .catch( error => {
-                console.error( error );
-            } );
+        CKEDITOR.replace( 'ckeditor-text' );
     </script>
 </body>
 </html>

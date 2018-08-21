@@ -11353,8 +11353,6 @@ module.exports = __webpack_require__(43);
  */
 
 __webpack_require__(12);
-/* require('./ckeditormore'); */
-
 window.Vue = __webpack_require__(36);
 
 /**
