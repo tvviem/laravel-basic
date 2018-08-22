@@ -30,9 +30,17 @@
         </main>
     </div>
     <script src="{!! mix('js/app.js') !!}"> </script>
-    <script src="/js/ckeditor/ckeditor.js"></script>
+    <script src="/js/ckeditor5-build-classic/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'ckeditor-text' );
+        ClassicEditor
+        .create( document.querySelector( '#ckeditor-text' ))
+        .then( editor => {
+            editor.autoParagraph = false;
+            console.log( editor );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
     </script>
 </body>
 </html>
