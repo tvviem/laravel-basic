@@ -16,9 +16,9 @@
     return 'This is user <h1>'.$name.'</h1> with an id of '.$id;
 });
  */
-Route::get('/compo', function () {
+/* Route::get('/compo', function () {
     return view('components.compon');
-});
+}); */
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
