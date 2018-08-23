@@ -3,6 +3,8 @@
 @section('content')
     <a href="/posts" class="btn">Go back</a>
     <h1>{{$post->title}}</h1>
+    <img style="width: 100%" src="/storage/cover_images/{{$post->cover_image}}">
+    <br><br>
     <div>
         {!!$post->body!!}
     </div>
@@ -13,7 +15,7 @@
         @if(Auth::user()->id == $post->user_id) {{-- Va neu bai viet cua nguoi dung nay --}}
             <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
             
-            {!!Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST'])!!}
+            {!!Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'float-right'])!!}
                 {{Form::hidden('_method', 'DELETE')}}
                 {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
             {!!Form::close()!!}
